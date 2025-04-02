@@ -22,7 +22,7 @@ function convertToMMSS(seconds) {
 }
 
 async function getsong() {
-  let responce = await fetch("http://127.0.0.1:5500/songs/");
+  let responce = await fetch("https://github.com/Shank0045/spotifyyyy/tree/main/songs");
 
   let data = await responce.text();
 
