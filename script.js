@@ -19,9 +19,9 @@ function convertToMMSS(seconds) {
 async function getsong() {
   // Manually list the songs in your 'songs' folder here, or automate it via GitHub API (this is a simplified version)
   const songFiles = [
-    "song1.mp3", // Replace with your actual filenames
-    "song2.mp3", // Replace with your actual filenames
-    "song3.mp3"  // Replace with your actual filenames
+    "Dolby Walya - Full Video _ Jaundya Na Balasaheb _ Ajay-Atul _ Girish Kulkarni & Saie Tamhankar.mp3", 
+    "Dr.Vishnuvardhan Hits _ Kannada Songs _ Elu Shiva Elu Shiva Song and more _ Hallunda Thavaru Movie.mp3", 
+    "Kaho Na Kaho (Official Video) Murder _ Emraan Hashmi _ Mallika Sherawat.mp3"  
   ];
 
   const baseURL = "https://raw.githubusercontent.com/Shank0045/spotifyyyy/main/songs/";
