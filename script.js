@@ -15,12 +15,15 @@ function convertToMMSS(seconds) {
   return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-// Update the getsong function
+
 async function getsong() {
-  // Manually list the songs in your 'songs' folder here, or automate it via GitHub API (this is a simplified version)
+
   const songFiles = [
     "Dolby Walya - Full Video _ Jaundya Na Balasaheb _ Ajay-Atul _ Girish Kulkarni & Saie Tamhankar.mp3", 
-    "Dr.Vishnuvardhan Hits _ Kannada Songs _ Elu Shiva Elu Shiva Song and more _ Hallunda Thavaru Movie.mp3", 
+    "Masked Wolf - Astronaut In The Ocean (Official Music Video).mp3"  ,
+    "POP SMOKE - DIOR (OFFICIAL VIDEO).mp3",
+    "Tokyo Drift - Teriyaki Boyz [ MUSIC VIDEO ] HD.mp3",
+    "Ye Tune Kya Kiya - Javed Bashir (Lyrics) _ Lyrical Bam Hindi.mp3", 
     "Kaho Na Kaho (Official Video) Murder _ Emraan Hashmi _ Mallika Sherawat.mp3"  
   ];
 
@@ -28,9 +31,9 @@ async function getsong() {
 
   let sogul = document.querySelector(".addmusic").getElementsByTagName("ul")[0];
 
-  // Loop through song files and add them to the list
+
   songFiles.forEach((song) => {
-    let songName = song.replaceAll("%20", " "); // To handle spaces in file names
+    let songName = song.replaceAll("%20", " "); 
     sogul.innerHTML += `
       <li>
         <div class="music"><img class="invert" src="music.svg" alt="music"> music</div>
@@ -38,12 +41,12 @@ async function getsong() {
       </li>`;
   });
 
-  // Return the full URLs of the songs
+
   return songFiles.map((song) => baseURL + song);
 }
 
 const playmusic = (track, pause = false) => {
-  // Play the song from the GitHub raw URL
+
   currentsong.src = "https://raw.githubusercontent.com/Shank0045/spotifyyyy/main/songs/" + track;
   console.log(track);
 
@@ -57,12 +60,12 @@ const playmusic = (track, pause = false) => {
 };
 
 async function main() {
-  songs = await getsong(); // Fetch the song list
+  songs = await getsong(); 
 
-  // Play the first song initially
+
   playmusic(songs[0].split("/songs/")[1], true);
 
-  // Set up click events for each song in the list
+
   Array.from(document.querySelector(".addmusic").getElementsByTagName("li")).forEach((e) => {
     e.addEventListener("click", () => {
       console.log(e.querySelector(".songname").innerHTML);
@@ -70,7 +73,7 @@ async function main() {
     });
   });
 
-  // Set up the play/pause button
+
   play.addEventListener("click", () => {
     if (currentsong.paused) {
       currentsong.play();
@@ -85,7 +88,7 @@ async function main() {
     });
   });
 
-  // Update song time and position in the progress bar
+
   currentsong.addEventListener("timeupdate", () => {
     document.querySelector(".songtime").innerHTML = `${convertToMMSS(
       currentsong.currentTime
@@ -95,14 +98,14 @@ async function main() {
       (currentsong.currentTime / currentsong.duration) * 100 + "%";
   });
 
-  // Seekbar functionality
+
   document.querySelector(".seekbar").addEventListener("click", (e) => {
     let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
     document.querySelector(".circle").style.left = percent + "%";
     currentsong.currentTime = (currentsong.duration * percent) / 100;
   });
 
-  // Playlist slide-in/out
+ 
   document.querySelector(".playlist").addEventListener("click", () => {
     document.querySelector(".lmain").style.left = 0 + "%";
   });
@@ -111,7 +114,7 @@ async function main() {
     document.querySelector(".lmain").style.left = -100 + "%";
   });
 
-  // Next/Previous buttons functionality
+
   document.getElementById("next").addEventListener("click", () => {
     currentSongIndex = (currentSongIndex + 1) % songs.length;
     playmusic(songs[currentSongIndex].split("/songs/")[1]);
