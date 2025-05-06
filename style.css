@@ -880,13 +880,13 @@ h1 {
         color: black;
         /* border: 2px solid white; */
         max-width: 80vw;
-        height: 4vh;
+        height: 8vh;
         overflow: scroll;
     }
 
     .playbar {
         margin: 5px;
-        height: 22vh;
+        height: 25vh;
         margin: 2px;
         padding: 0px;
     }
