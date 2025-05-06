@@ -33,7 +33,7 @@ A responsive, Spotify-inspired music streaming web app built with **HTML**, **CS
 ## 🌐 Live Demo
 
 Deploy via GitHub Pages or Netlify:
-**[🔗 Click to View Live](https://your-live-demo-link.com)**
+**[🔗 Click to View Live](https://shank0045.github.io/spotifyyyy/)**
 
 ---
 
