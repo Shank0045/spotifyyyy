@@ -26,7 +26,7 @@ A responsive, Spotify-inspired music streaming web app built with **HTML**, **CS
 
 ## 🖼 UI Preview
 
-> (Add screenshots or screen recordings if available)
+https://github.com/user-attachments/assets/8346e4e7-7e59-4652-baca-d6f31577a70e
 
 ---
 
